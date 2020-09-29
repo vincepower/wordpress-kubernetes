@@ -22,7 +22,7 @@ This scenario provides instructions for the following tasks:
 files for multiple purposes, leaving the original YAML
 untouched and usable as is.
 
-Create a new file called `password.txt` in the same directory and put your desired MySQL password inside `password.txt` (Could be any string with ASCII characters).
+Update kustomize.yaml and replace YOUR_PASSWORD with a password which will be used for MySQL (Could be any string with ASCII characters).
 
 ### To run the kustomization file 
 
@@ -31,11 +31,14 @@ oc apply -k ./
 ```
 
 ```bash
-secret/mysql-pass-c2f8979ct6 created
+secret/mysql-pass-8mbg69d8ch created
 service/wordpress-mysql created
 service/wordpress created
 deployment.apps/wordpress-mysql created
 deployment.apps/wordpress created
+route.route.openshift.io/wordpress created
+persistentvolumeclaim/mysql-pv-claim created
+persistentvolumeclaim/wp-pv-claim created
 ```
 
 ### To remove the deployment
